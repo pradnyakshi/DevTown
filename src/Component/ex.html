@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/pyodide/dev/full/pyodide.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const urlParams = new URLSearchParams(window.location.search);
+        const param1 = urlParams.get('param1');
+        console.log('param1:', param1);
+        async function main() {
+            let pyodide = await loadPyodide();
+            return pyodide.runPython("print(1 + 2)");
+        }
+        main();
+    </script>
+</body>
+
+</html>
